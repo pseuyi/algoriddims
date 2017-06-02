@@ -42,6 +42,6 @@ function largestSmallerBSTKey (root, x) {
 
 }
 
-// largestSmallerBSTKey(bst, 20) // expect 15
+// largestSmallerBSTKey(bst, 20) // expect 19
 // largestSmallerBSTKey(bst, 28) // expect 25
  largestSmallerBSTKey(bst, 19) // expect 17
