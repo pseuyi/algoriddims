@@ -21,6 +21,7 @@ bst.insert(17)
 bst.insert(19)
 bst.insert(1)
 
+// bad solution
 // function largestSmallerBSTKey (root, x) {
 //   let curr = root
 //   if(x<=curr.value && x>curr.left.value) return curr.left.value
