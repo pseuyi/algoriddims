@@ -1,5 +1,5 @@
 /*
-a->b->c
+delete a node in a singly linked list
 */
 
 function Node (val) {
@@ -13,8 +13,11 @@ Node.prototype.add = function (val) {
     curr = curr.next
   }
   curr.next = new Node(val)
+  return curr.next
 }
 
+/*
+O(n) solution that walks through entire list taking a value
 Node.prototype.deleteNode = function (val) {
   let prev = null
   let curr = this
@@ -34,10 +37,40 @@ Node.prototype.deleteNode = function (val) {
     curr = curr.next
   }
 }
+*/
+
+/*
+O(n) solution that takes a node reference and reassigns nodes
+doens't delete last node
+function deleteNode (node) {
+  while(node){
+    node.val = node.next.val
+    node.next = !node.next.next? null : node.next
+
+    node = node.next
+  }
+  return node
+}
+*/
+
+/*
+O(1) solution that has side effects that takes node reference
+*/
+
+function deleteNode (node) {
+  try {
+    node.val = node.next.val
+    node.next = node.next.next
+  }
+  catch (err) {
+    throw new Error("cannot delete last node")
+  }
+  return node
+}
 
 const testList = new Node('a')
 testList.add('b')
 testList.add('c')
+const nodeToDelete = testList.add('d')
+deleteNode(nodeToDelete)
 console.log(testList)
-testList.deleteNode('a')
-console.log('after delete', testList)
