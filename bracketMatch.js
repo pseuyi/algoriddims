@@ -14,16 +14,15 @@ function bracketMatch (str) {
   let open = 0
   let need = 0
   while(i<str.length) {
-    let char = str[i]
+    let char = str[i++]
     char === '(' ? open++ : open--
     // extra closing bracket, need one more opening bracket
     if (open < 0) {
       need++
       open = 0
     }
-    i++
+    // i++
   }
-  // extra opening bracket, add num extra to need
-  if(open > 0) need+= open
-  return need
+  // if there are any extra opening brackets, add num extra to need
+  return need += open
 }
