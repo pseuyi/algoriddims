@@ -40,6 +40,10 @@ function swap (arr, a, b) {
   arr[b] = tmp
 }
 
+function notEfficient (arr) {
+  return arr.join('').split(' ').reverse().join(' ').split('')
+}
+
 // test cases
 const input = ['f','i','r','e',' ',
                'o','n',' ',
