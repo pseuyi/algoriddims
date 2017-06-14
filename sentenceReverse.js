@@ -1,4 +1,5 @@
 /*
+reverse the order of words in an array
 input:  arr = ['f','i','r','e',' ',
                'o','n',' ',
                'c','a','t']
