@@ -1,7 +1,7 @@
 const randomiseArray = arr => {
-    const buffer = [], len = arr.length
-    let idx, i
-    for(i=0; i<len; i++) {
+    const buffer = []
+    let idx
+    while(arr.length) {
         idx = Math.floor(Math.random()*arr.length)
         buffer.push(arr.splice(idx, 1)[0])
     }
@@ -24,3 +24,6 @@ const swap = (a, b, arr) => {
     arr[a] = arr[b]
     arr[b] = tmp
 }
+
+const test = [1,2,3,4]
+console.log(randomiseArray(test))
