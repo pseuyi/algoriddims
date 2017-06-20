@@ -14,3 +14,17 @@ function pairSumNaive (arr, tgt) {
   }
   return false
 }
+
+function pairSum (arr, tgt) {
+  const len = arr.length
+  const memo = {}
+  for(let i=0; i<len; i++) {
+    let diff = tgt - arr[i]
+    if(memo[diff]) return true
+    else memo[arr[i]] = true
+  }
+  return false
+}
+
+//pairSumNaive([6,4,3,2,1,7], 9)
+//console.log(pairSum([6,4,3,2,1,7], 2))
