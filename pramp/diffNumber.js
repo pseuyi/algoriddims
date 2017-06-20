@@ -11,3 +11,5 @@ function diffNumber (arr) {
   }
   return nums.size //when the input is in order from 0
 }
+
+//TODO: in-place solution
