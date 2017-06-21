@@ -12,7 +12,7 @@ function coinChange (money, denom) {
       ways.push(way)
     }
     else if (waySum < money) {
-      coinChange (money - waySum, denom).forEach(sub=>{
+      coinChange(money - waySum, denom).forEach(sub=>{
         const perm = way.concat(sub)
         // the resulting perumation should add up to the tgt amt, so add it to ways
         ways.push(perm)
