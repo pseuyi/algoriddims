@@ -18,42 +18,42 @@ b.next = c;
 c.next = d;
 d.next = e;
 
-//working solution
-// function kthToLastNode (k, node) {
-//   let size = 0, curr = node, i = 0
-//
-//   while (curr) {
-//     curr = curr.next
-//     size++
-//   }
-//
-//   curr = node
-//   while (i<size-k) {
-//     curr = curr.next
-//     i++
-//   }
-//
-//   return curr
-// }
-
-//runner solution
-
+//working O(n) solution
 function kthToLastNode (k, node) {
-  let curr = node, i = 0
-  let last
+  let size = 0, curr = node, i = 0
 
-  while (i<k) {
-    last = curr.next
-    i++
+  while (curr) {
+    curr = curr.next
+    size++
   }
 
-  while (last) {
+  curr = node
+  while (i<size-k) {
     curr = curr.next
-    last = last.next
+    i++
   }
 
   return curr
 }
+
+//runner solution
+
+// function kthToLastNode (k, node) {
+//   let curr = node, i = 0
+//   let last
+//
+//   while (i<k) {
+//     last = curr.next
+//     i++
+//   }
+//
+//   while (last) {
+//     if(!last.next) return curr
+//     curr = curr.next
+//     last = last.next
+//   }
+//
+// }
 
 
 
