@@ -1,5 +1,6 @@
 /*
-find the kth to last node, given an integer k and a head node
+find the kth to last node in a singly linked lists, given an integer k and a head node
+*/
 
 function LinkedListNode(value) {
   this.value = value;
@@ -17,7 +18,26 @@ b.next = c;
 c.next = d;
 d.next = e;
 
-kthToLastNode(2, a);
-// returns the node with value "Devil's Food" (the 2nd to last node)
+//runner solution
+function kthToLastNode (k, node) {
+  let curr = node
+  let kthToLast
+  let i = 0
 
-*/
+  while (curr) {
+    kthToLast = curr
+    // traverse list in k steps
+    while(i<k) {
+      curr = curr.next || null
+      i++
+    }
+    i = 0
+  }
+
+  return kthToLast
+}
+
+
+
+console.log(kthToLastNode(2, a))
+// returns the node with value "Devil's Food" (the 2nd to last node)
