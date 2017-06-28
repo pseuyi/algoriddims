@@ -18,7 +18,26 @@ b.next = c;
 c.next = d;
 d.next = e;
 
+//working solution
+function kthToLastNode (k, node) {
+  let size = 0, curr = node, i = 0
+
+  while (curr) {
+    curr = curr.next
+    size++
+  }
+
+  curr = node
+  while (i<size-k) {
+    curr = curr.next
+    i++
+  }
+
+  return curr
+}
+
 //runner solution
+/*
 function kthToLastNode (k, node) {
   let curr = node
   let kthToLast
@@ -36,7 +55,7 @@ function kthToLastNode (k, node) {
 
   return kthToLast
 }
-
+*/
 
 
 console.log(kthToLastNode(2, a))
